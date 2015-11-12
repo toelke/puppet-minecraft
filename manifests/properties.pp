@@ -12,7 +12,7 @@ class minecraft::properties {
     }
   }
 
-  server_setting { 'server.properties': }
+  server_setting { 'server.properties.source': }
 
   if $minecraft::ops != undef {
     server_setting { 'ops.txt': }

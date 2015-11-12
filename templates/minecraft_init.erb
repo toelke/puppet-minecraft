@@ -40,6 +40,7 @@ mc_start() {
   else
     echo "$SERVICE was not running... starting."
     cd $MCPATH
+    as_user "cp server.properties.source server.properties"
     as_user "cd $MCPATH && screen -dmS survival-mc java -Xmx${MAX_HEAP}M -Xms${MIN_HEAP}M -jar minecraft_server.jar nogui"
   ## Add additional lines for additioanl Minecrat instances below here
   # as_user "cd $MCPATH2 && screen -dmS creative-mc java -Xmx2048M -Xms2048M -jar minecraft_server.jar nogui"
